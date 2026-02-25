@@ -28,7 +28,6 @@ hs_err_pid*
 
 # Exercise outputs
 output/
-*.ttl
 
 # Test outputs
 test-output/
