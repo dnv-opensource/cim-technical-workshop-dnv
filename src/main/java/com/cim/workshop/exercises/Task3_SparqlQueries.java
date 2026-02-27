@@ -39,8 +39,8 @@ import java.util.*;
  * rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
  *
  * Basic patterns:
- * SELECT ?var WHERE { ?var rdf:type cim:ACLineSegment }
- * SELECT ?name WHERE { ?line cim:IdentifiedObject.name ?name }
+ * SELECT ?var WHERE { GRAPH ?g { ?var rdf:type cim:ACLineSegment } }
+ * SELECT ?name WHERE { GRAPH ?g { ?line cim:IdentifiedObject.name ?name } }
  *
  * Joining data:
  * ?line cim:Equipment.EquipmentContainer ?container .
@@ -90,9 +90,11 @@ public class Task3_SparqlQueries {
 
                 SELECT ?line ?name
                 WHERE {
-                    # TODO: Add your query pattern here
-                    # HINT: Find resources of type cim:ACLineSegment
-                    # HINT: Get their names using cim:IdentifiedObject.name
+                    GRAPH ?g {
+                        # TODO: Add your query patterns here
+                        # HINT: Use rdf:type to find instances of cim:ACLineSegment
+                        # HINT: Use cim:IdentifiedObject.name to get the name property
+                    }
                 }
                 """;
 
@@ -109,7 +111,7 @@ public class Task3_SparqlQueries {
         // TODO: Write complete query
         // Structure:
         // - SELECT ?line ?lineName ?terminal
-        // - Find ACLineSegments and their names (from Query 1)
+        // - Find ACLineSegments and their names (from Query 1, but use ?lineName)
         // - Add pattern: ?terminal cim:Terminal.ConductingEquipment ?line .
 
         String query = """
@@ -118,8 +120,10 @@ public class Task3_SparqlQueries {
 
                 SELECT ?line ?lineName ?terminal
                 WHERE {
-                    // YOUR QUERY PATTERNS HERE
-
+                    GRAPH ?g {
+                        # TODO: Add patterns from Query 1 (ACLineSegment + name as ?lineName)
+                        # TODO: Add pattern: ?terminal cim:Terminal.ConductingEquipment ?line .
+                    }
                 }
                 """;
 
@@ -130,14 +134,15 @@ public class Task3_SparqlQueries {
      * Query 3: Find ACLineSegments WITHOUT terminals (data errors)
      *
      * Use FILTER NOT EXISTS to find missing relationships.
-     * Pattern: FILTER NOT EXISTS { ?terminal cim:Terminal.ConductingEquipment ?line
-     * }
+     * The FILTER NOT EXISTS should be inside the GRAPH block, after finding
+     * ACLineSegments.
      */
     public String getACLineSegmentsWithoutTerminalsQuery() {
         // TODO: Write query using FILTER NOT EXISTS
         // Structure:
-        // - Find all ACLineSegments
-        // - Use FILTER NOT EXISTS to exclude those that HAVE terminals
+        // - Find all ACLineSegments with names (from Query 1)
+        // - Add: FILTER NOT EXISTS { ?terminal cim:Terminal.ConductingEquipment ?line }
+        // - This filters OUT lines that have terminals, leaving only those without
 
         String query = """
                 PREFIX cim: <http://iec.ch/TC57/CIM100#>
@@ -145,8 +150,10 @@ public class Task3_SparqlQueries {
 
                 SELECT ?line ?name
                 WHERE {
-                    // YOUR QUERY PATTERNS HERE
-
+                    GRAPH ?g {
+                        # TODO: Find all ACLineSegments with names (from Query 1)
+                        # TODO: Add FILTER NOT EXISTS { ?terminal cim:Terminal.ConductingEquipment ?line }
+                    }
                 }
                 """;
 
@@ -160,14 +167,18 @@ public class Task3_SparqlQueries {
      * ACLineSegment -> Terminal -> ConnectivityNode <- Terminal <- Switch
      *
      * Step-by-step hints:
-     * 1. ?lineTerminal cim:Terminal.ConductingEquipment ?line
-     * 2. ?lineTerminal cim:Terminal.ConnectivityNode ?node
-     * 3. ?switchTerminal cim:Terminal.ConnectivityNode ?node (same node)
-     * 4. ?switchTerminal cim:Terminal.ConductingEquipment ?switch
-     * 5. ?switch rdf:type cim:Switch
+     * 1. Find line: ?line rdf:type cim:ACLineSegment
+     * 2. Get line's terminal: ?lineTerminal cim:Terminal.ConductingEquipment ?line
+     * 3. Get connectivity node: ?lineTerminal cim:Terminal.ConnectivityNode ?node
+     * 4. Find other terminals at same node: ?switchTerminal
+     * cim:Terminal.ConnectivityNode ?node
+     * 5. Get equipment from terminal: ?switchTerminal
+     * cim:Terminal.ConductingEquipment ?switch
+     * 6. Filter to switches: ?switch rdf:type cim:Switch
+     * 7. Get names: Use cim:IdentifiedObject.name for both ?line and ?switch
      */
     public String getConnectedSwitchesQuery() {
-        // TODO: Build complete query with all 5 patterns above
+        // TODO: Build complete query with all patterns above
 
         String query = """
                 PREFIX cim: <http://iec.ch/TC57/CIM100#>
@@ -175,8 +186,12 @@ public class Task3_SparqlQueries {
 
                 SELECT ?line ?lineName ?switch ?switchName
                 WHERE {
-                    // YOUR QUERY PATTERNS HERE
-
+                    GRAPH ?g {
+                        # TODO: Follow the 7-step pattern from method comments above
+                        # Start with finding ACLineSegments (step 1)
+                        # Then trace through terminals and connectivity nodes (steps 2-6)
+                        # Don't forget to get names for both line and switch (step 7)!
+                    }
                 }
                 """;
 
