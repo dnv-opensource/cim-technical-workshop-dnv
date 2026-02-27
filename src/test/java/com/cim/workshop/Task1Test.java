@@ -66,12 +66,12 @@ public class Task1Test {
             System.out.println("Extracted mRID: " + mrid);
 
             assertThat(mrid)
-                .as("mRID should not be null")
-                .isNotNull();
+                    .as("mRID should not be null")
+                    .isNotNull();
 
             assertThat(mrid)
-                .as("mRID should start with 'urn:uuid:'")
-                .startsWith("urn:uuid:");
+                    .as("mRID should start with 'urn:uuid:'")
+                    .startsWith("urn:uuid:");
 
             System.out.println("✓ Successfully extracted Model ID");
             System.out.println("\nNext step: Implement loadCimFile() method\n");
@@ -93,15 +93,15 @@ public class Task1Test {
             Model model = dataImport.loadCimFile(TEST_FILE);
 
             assertThat(model)
-                .as("Model should not be null")
-                .isNotNull();
+                    .as("Model should not be null")
+                    .isNotNull();
 
             long tripleCount = model.size();
             System.out.println("Loaded model with " + tripleCount + " triples");
 
             assertThat(tripleCount)
-                .as("Model should contain triples")
-                .isGreaterThan(0);
+                    .as("Model should contain triples")
+                    .isGreaterThan(0);
 
             System.out.println("✓ Successfully loaded CIM file into model");
             System.out.println("\nNext step: Implement uploadToFuseki() method\n");
@@ -131,8 +131,8 @@ public class Task1Test {
             System.out.println("Triple count in Fuseki: " + tripleCount);
 
             assertThat(tripleCount)
-                .as("Fuseki should contain the uploaded triples")
-                .isEqualTo(model.size());
+                    .as("Fuseki should contain the uploaded triples")
+                    .isEqualTo(model.size());
 
             System.out.println("✓ Successfully uploaded model to Fuseki");
             System.out.println("\nNext step: Implement importDirectory() method\n");
@@ -155,9 +155,9 @@ public class Task1Test {
             File dir = new File(directory);
 
             assertThat(dir)
-                .as("Test directory should exist")
-                .exists()
-                .isDirectory();
+                    .as("Test directory should exist")
+                    .exists()
+                    .isDirectory();
 
             System.out.println("Importing all files from: " + directory);
             List<String> importedGraphs = dataImport.importDirectory(directory);
@@ -166,15 +166,15 @@ public class Task1Test {
             importedGraphs.forEach(graph -> System.out.println("  - " + graph));
 
             assertThat(importedGraphs)
-                .as("Should have imported multiple graphs")
-                .isNotEmpty();
+                    .as("Should have imported multiple graphs")
+                    .isNotEmpty();
 
             // Verify each graph in Fuseki
             for (String graphUri : importedGraphs) {
                 long count = fusekiClient.getTripleCount(graphUri);
                 assertThat(count)
-                    .as("Graph " + graphUri + " should contain triples")
-                    .isGreaterThan(0);
+                        .as("Graph " + graphUri + " should contain triples")
+                        .isGreaterThan(0);
             }
 
             System.out.println("\n✓ Successfully completed Task 1!");

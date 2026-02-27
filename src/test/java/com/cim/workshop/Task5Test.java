@@ -37,10 +37,10 @@ public class Task5Test {
 
     @Test
     @Order(1)
-    @DisplayName("4.1: Create basic ACLineSegment shape")
+    @DisplayName("5.1: Create basic ACLineSegment shape")
     void testCreateACLineSegmentShape() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 4.1: Create Basic SHACL Shape");
+        System.out.println("TEST 5.1: Create Basic SHACL Shape");
         System.out.println("=".repeat(60));
 
         try {
@@ -69,10 +69,10 @@ public class Task5Test {
 
     @Test
     @Order(2)
-    @DisplayName("4.2: Create connectivity validation shape")
+    @DisplayName("5.2: Create connectivity validation shape")
     void testCreateConnectivityShape() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 4.2: Create Connectivity Shape");
+        System.out.println("TEST 5.2: Create Connectivity Shape");
         System.out.println("=".repeat(60));
 
         try {
@@ -100,10 +100,10 @@ public class Task5Test {
 
     @Test
     @Order(3)
-    @DisplayName("4.3: Create SHACL-SPARQL constraint")
+    @DisplayName("5.3: Create SHACL-SPARQL constraint")
     void testCreateSparqlConstraintShape() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 4.3: Create SHACL-SPARQL Constraint");
+        System.out.println("TEST 5.3: Create SHACL-SPARQL Constraint");
         System.out.println("=".repeat(60));
 
         try {
@@ -131,10 +131,10 @@ public class Task5Test {
 
     @Test
     @Order(4)
-    @DisplayName("4.4: Save SHACL shapes to file")
+    @DisplayName("5.4: Save SHACL shapes to file")
     void testSaveShaclShapes() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 4.4: Save SHACL Shapes");
+        System.out.println("TEST 5.4: Save SHACL Shapes");
         System.out.println("=".repeat(60));
 
         try {
@@ -167,10 +167,10 @@ public class Task5Test {
 
     @Test
     @Order(5)
-    @DisplayName("4.5: Validate with custom shapes")
+    @DisplayName("5.5: Validate with custom shapes")
     void testValidateWithCustomShapes() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 4.5: Validate with Custom Shapes");
+        System.out.println("TEST 5.5: Validate with Custom Shapes");
         System.out.println("=".repeat(60));
 
         try {
@@ -203,10 +203,10 @@ public class Task5Test {
 
     @Test
     @Order(6)
-    @DisplayName("4.6: Compare SHACL and SPARQL approaches")
+    @DisplayName("5.6: Compare SHACL and SPARQL approaches")
     void testCompareShaclAndSparql() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 4.6: Compare SHACL and SPARQL");
+        System.out.println("TEST 5.6: Compare SHACL and SPARQL");
         System.out.println("=".repeat(60));
         System.out.println("This demonstrates the connection between SHACL and SPARQL");
         System.out.println("=".repeat(60));

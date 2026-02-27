@@ -388,7 +388,7 @@ public class Task2Test {
 
             System.out.println("\n✓ Successfully exported all graphs");
             System.out.println("\n" + "=".repeat(60));
-            System.out.println("TASK 5 COMPLETE! 🎉");
+            System.out.println("TASK 2 COMPLETE!");
             System.out.println("=".repeat(60));
             System.out.println("\nYou've successfully implemented CIM-aware data export:");
             System.out.println("  • List all graphs in Fuseki");

@@ -240,10 +240,10 @@ public class Task4Test {
 
     @Test
     @Order(6)
-    @DisplayName("3.6: Generate human-readable report")
+    @DisplayName("4.6: Generate human-readable report")
     void testGenerateReport() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 3.6: Generate Validation Report");
+        System.out.println("TEST 4.6: Generate Validation Report");
         System.out.println("=".repeat(60));
 
         try {
@@ -267,15 +267,15 @@ public class Task4Test {
 
             System.out.println("✓ Successfully generated validation report");
             System.out.println("\n" + "=".repeat(60));
-            System.out.println("TASK 3 COMPLETE!");
+            System.out.println("TASK 4 COMPLETE!");
             System.out.println("=".repeat(60));
             System.out.println("\nYou have successfully:");
             System.out.println("  ✓ Loaded SHACL shapes from files");
             System.out.println("  ✓ Validated CIM data against SHACL rules");
             System.out.println("  ✓ Extracted and analyzed violations");
             System.out.println("  ✓ Generated validation reports");
-            System.out.println("\nNext: Move on to Task 4 - Create Custom SHACL Rules");
-            System.out.println("Run: mvn test -Dtest=Task4Test\n");
+            System.out.println("\nNext: Move on to Task 5 - Create Custom SHACL Rules");
+            System.out.println("Run: mvn test -Dtest=Task5Test\n");
 
         } catch (UnsupportedOperationException e) {
             fail("Method not implemented yet. Complete the generateReport() method in Task4_ShaclValidation.java");

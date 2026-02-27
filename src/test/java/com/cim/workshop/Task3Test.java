@@ -166,7 +166,7 @@ public class Task3Test {
             if (results.isEmpty()) {
                 System.out.println("\n✓ Good news! No ACLineSegments without terminals found.");
             } else {
-                System.out.println("\n⚠ Found " + results.size() + " ACLineSegments WITHOUT terminals:");
+                System.out.println("\nWARNING: Found " + results.size() + " ACLineSegments WITHOUT terminals:");
                 System.out.println("-".repeat(60));
 
                 for (int i = 0; i < results.size(); i++) {
@@ -239,17 +239,17 @@ public class Task3Test {
                     .as("Query should execute successfully")
                     .isNotNull();
 
-            System.out.println("\n✓ Successfully completed Task 2!");
+            System.out.println("\n✓ Successfully completed Task 3!");
             System.out.println("\n" + "=".repeat(60));
-            System.out.println("TASK 2 COMPLETE!");
+            System.out.println("TASK 3 COMPLETE!");
             System.out.println("=".repeat(60));
             System.out.println("\nYou have successfully:");
             System.out.println("  ✓ Queried all ACLineSegments");
             System.out.println("  ✓ Found terminals for ACLineSegments");
             System.out.println("  ✓ Identified ACLineSegments without terminals");
             System.out.println("  ✓ Found switches connected to lines");
-            System.out.println("\nNext: Move on to Task 3 - SHACL Validation");
-            System.out.println("Run: mvn test -Dtest=Task3Test\n");
+            System.out.println("\nNext: Move on to Task 4 - SHACL Validation");
+            System.out.println("Run: mvn test -Dtest=Task4Test\n");
 
         } catch (UnsupportedOperationException e) {
             fail("Query not implemented yet. Complete getConnectedSwitchesQuery() in Task3_SparqlQueries.java");
