@@ -69,7 +69,7 @@ public class Task4_ShaclValidation {
      * SHACL files define validation rules (shapes and constraints).
      */
     public Model loadAllShaclShapes(String directoryPath) {
-        Model shapesModel = ModelFactory.createDefaultModel();
+        Model mergedModel = ModelFactory.createDefaultModel();
         File directory = new File(directoryPath);
 
         if (!directory.exists() || !directory.isDirectory()) {
@@ -82,13 +82,18 @@ public class Task4_ShaclValidation {
 
         if (ttlFiles != null) {
             for (File file : ttlFiles) {
-                // TODO: Read file and add to shapes model
-                // HINT: RDFDataMgr.read(shapesModel, file.getAbsolutePath(), Lang.TURTLE)
-
+                try {
+                    // TODO: Load each file using loadShaclShapes() method
+                    // HINT: Model shapeModel = loadShaclShapes(file.getAbsolutePath());
+                    // TODO: Add the loaded model to mergedModel
+                    // HINT: mergedModel.add(shapeModel);
+                } catch (Exception e) {
+                    System.err.println("Error loading SHACL file: " + file.getAbsolutePath());
+                    e.printStackTrace();
+                }
             }
         }
-
-        return shapesModel;
+        return mergedModel;
     }
 
     /**
