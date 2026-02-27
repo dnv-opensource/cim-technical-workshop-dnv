@@ -79,10 +79,10 @@ public class Task4Test {
 
     @Test
     @Order(2)
-    @DisplayName("3.2: Load and merge multiple SHACL files")
+    @DisplayName("4.2: Load and merge multiple SHACL files")
     void testLoadAllShaclShapes() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 3.2: Load All SHACL Shapes");
+        System.out.println("TEST 4.2: Load All SHACL Shapes");
         System.out.println("=".repeat(60));
 
         try {
@@ -109,10 +109,10 @@ public class Task4Test {
 
     @Test
     @Order(3)
-    @DisplayName("3.3: Validate CIM data against SHACL shapes")
+    @DisplayName("4.3: Validate CIM data against SHACL shapes")
     void testValidate() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 3.3: Validate CIM Data");
+        System.out.println("TEST 4.3: Validate CIM Data");
         System.out.println("=".repeat(60));
 
         try {
@@ -151,10 +151,10 @@ public class Task4Test {
 
     @Test
     @Order(4)
-    @DisplayName("3.4: Extract violation details")
+    @DisplayName("4.4: Extract violation details")
     void testGetViolationDetails() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 3.4: Extract Violation Details");
+        System.out.println("TEST 4.4: Extract Violation Details");
         System.out.println("=".repeat(60));
 
         try {
@@ -200,10 +200,10 @@ public class Task4Test {
 
     @Test
     @Order(5)
-    @DisplayName("3.5: Find specific violations")
+    @DisplayName("4.5: Find specific violations")
     void testFindViolationsByMessage() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 3.5: Find Specific Violations");
+        System.out.println("TEST 4.5: Find Specific Violations");
         System.out.println("=".repeat(60));
 
         try {

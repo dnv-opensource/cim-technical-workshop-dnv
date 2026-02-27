@@ -233,10 +233,10 @@ public class Task2Test {
 
     @Test
     @Order(5)
-    @DisplayName("5.5: Group graphs by profile type")
+    @DisplayName("2.5: Group graphs by profile type")
     void testGroupGraphsByProfile() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 5.5: Group Graphs by Profile (CIM-Aware)");
+        System.out.println("TEST 2.5: Group Graphs by Profile (CIM-Aware)");
         System.out.println("=".repeat(60));
 
         try {
@@ -273,10 +273,10 @@ public class Task2Test {
 
     @Test
     @Order(6)
-    @DisplayName("5.6: Export graphs by profile type")
+    @DisplayName("2.6: Export graphs by profile type")
     void testExportByProfile() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 5.6: Export by Profile (CIM-Aware)");
+        System.out.println("TEST 2.6: Export by Profile (CIM-Aware)");
         System.out.println("=".repeat(60));
 
         try {
@@ -322,10 +322,10 @@ public class Task2Test {
 
     @Test
     @Order(7)
-    @DisplayName("5.7: Generate export report")
+    @DisplayName("2.7: Generate export report")
     void testGenerateExportReport() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 5.7: Generate Export Report (CIM-Aware)");
+        System.out.println("TEST 2.7: Generate Export Report (CIM-Aware)");
         System.out.println("=".repeat(60));
 
         try {
@@ -352,10 +352,10 @@ public class Task2Test {
 
     @Test
     @Order(8)
-    @DisplayName("5.8: Export all graphs to directory")
+    @DisplayName("2.8: Export all graphs to directory")
     void testExportAllGraphs() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 5.8: Export All Graphs");
+        System.out.println("TEST 2.8: Export All Graphs");
         System.out.println("=".repeat(60));
 
         try {

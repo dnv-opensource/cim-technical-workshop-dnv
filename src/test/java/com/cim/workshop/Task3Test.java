@@ -53,10 +53,10 @@ public class Task3Test {
 
     @Test
     @Order(1)
-    @DisplayName("2.1: Query all ACLineSegments")
+    @DisplayName("3.1: Query all ACLineSegments")
     void testGetAllACLineSegments() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 2.1: Query All ACLineSegments");
+        System.out.println("TEST 3.1: Query All ACLineSegments");
         System.out.println("=".repeat(60));
 
         try {
@@ -97,10 +97,10 @@ public class Task3Test {
 
     @Test
     @Order(2)
-    @DisplayName("2.2: Query ACLineSegment terminals")
+    @DisplayName("3.2: Query ACLineSegment terminals")
     void testGetACLineSegmentTerminals() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 2.2: Query ACLineSegment Terminals");
+        System.out.println("TEST 3.2: Query ACLineSegment Terminals");
         System.out.println("=".repeat(60));
 
         try {
@@ -149,10 +149,10 @@ public class Task3Test {
 
     @Test
     @Order(3)
-    @DisplayName("2.3: Find ACLineSegments without terminals (ERRORS)")
+    @DisplayName("3.3: Find ACLineSegments without terminals (ERRORS)")
     void testGetACLineSegmentsWithoutTerminals() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 2.3: Find ACLineSegments WITHOUT Terminals");
+        System.out.println("TEST 3.3: Find ACLineSegments WITHOUT Terminals");
         System.out.println("=".repeat(60));
         System.out.println("This query identifies ERRORS in the grid model!");
         System.out.println("=".repeat(60));
@@ -193,10 +193,10 @@ public class Task3Test {
 
     @Test
     @Order(4)
-    @DisplayName("2.4: Find connected switches")
+    @DisplayName("3.4: Find connected switches")
     void testGetConnectedSwitches() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("TEST 2.4: Find Switches Connected to ACLineSegments");
+        System.out.println("TEST 3.4: Find Switches Connected to ACLineSegments");
         System.out.println("=".repeat(60));
 
         try {
